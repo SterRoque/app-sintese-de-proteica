@@ -1,0 +1,2 @@
+rootProject.name = "Sintese de Proteina"
+include ':app'
