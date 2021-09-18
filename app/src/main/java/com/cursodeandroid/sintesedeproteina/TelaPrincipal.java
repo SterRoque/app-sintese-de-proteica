@@ -29,15 +29,12 @@ public class TelaPrincipal extends TelaInicial {
 
     SinteseProteica sp = new SinteseProteica();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_principal);
         dna = findViewById(R.id.dna);
         resultado = findViewById(R.id.fita);
-        resultadoAmino = findViewById(R.id.textAmino);
         dup = findViewById(R.id.buttonDup);
 
     }
@@ -61,7 +58,6 @@ public class TelaPrincipal extends TelaInicial {
 
     }
 
-
     public void buttonTranscricao(View view){
         fita = dna.getText().toString();
         if (fita.equals("") || fita == null) {
@@ -82,7 +78,11 @@ public class TelaPrincipal extends TelaInicial {
 
     }
 
+    public void buttonTraducao(View view){
+        Intent intent = new Intent(getApplicationContext(), TelaTraducao.class);
 
+        startActivity(intent);
+    }
 
     public void limpar(View view){
         dna.setText("");
@@ -91,7 +91,7 @@ public class TelaPrincipal extends TelaInicial {
     }
     public void gerarFita(View view){
         char[] dnaFita = {'A', 'T', 'C', 'G'};
-        char[] fitaGerada = new char[9];
+        char[] fitaGerada = new char[21];
         fitaGerada[0] = 'T';
         fitaGerada[1] = 'A';
         fitaGerada[2] = 'C';

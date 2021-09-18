@@ -3,18 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/projects/SintesedeProteina/app/src/main/res/layout/activity_tela_inicial.xml" value="0.33" />
+        <entry key="..\:/Android/projects/SintesedeProteina/app/src/main/res/layout/activity_tela_splash.xml" value="0.27291666666666664" />
+        <entry key="..\:/SintesedeProteina/app/src/main/res/layout/activity_tela_inicial.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27395833333333336" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/button_conteudo_pressed.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/button_press_red.xml" value="0.2713541666666667" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/button_pressed.xml" value="0.26481481481481484" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/button_questionario_pressed.xml" value="0.26481481481481484" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/button_red_press.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/button_redondo.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/button_redondo2.xml" value="0.2713541666666667" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/buttons.xml" value="0.27395833333333336" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27395833333333336" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/drawable/ic_tela_principal.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-land/activity_tela_inicial.xml" value="0.33" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-large-land/activity_tela_inicial.xml" value="0.33" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-large/activity_tela_inicial.xml" value="0.33" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-normal/activity_tela_inicial.xml" value="0.33" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-small/activity_tela_inicial.xml" value="0.67" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-square/activity_tela_inicial.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-sw600dp/activity_tela_inicial.xml" value="0.33" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout-xlarge/activity_tela_inicial.xml" value="0.2392578125" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_main2.xml" value="0.5" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_tela_duplicacao.xml" value="0.33" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_tela_inicial.xml" value="0.25" />
-        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_tela_principal.xml" value="0.67" />
+        <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_tela_principal.xml" value="0.5" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_tela_traducao.xml" value="0.5" />
         <entry key="..\:/Users/sterm/AndroidStudioProjects/SintesedeProteina/app/src/main/res/layout/activity_tela_transcricao.xml" value="0.5" />
       </map>

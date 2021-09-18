@@ -16,7 +16,6 @@ public class TelaDuplicação extends TelaPrincipal {
     private String fita;
     private String fitaDuplicada;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

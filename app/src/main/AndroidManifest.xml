@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SinteseDeProteina">
         <activity
+            android:name=".TelaInicial"
+            android:exported="true" />
+        <activity
             android:name=".TelaTraducao"
             android:exported="true" />
         <activity
@@ -21,7 +24,9 @@
         <activity
             android:name=".TelaDuplicação"
             android:exported="true" />
-        <activity android:name=".TelaInicial">
+        <activity
+            android:name=".TelaSplash"
+            android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
