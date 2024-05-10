@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SinteseDeProteina" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item><!--Cor da barra de status-->
+        <item name="colorPrimaryVariant">@color/colorSecundary</item><!--Cor da barra de notificaçao-->
+        <item name="colorOnPrimary">@color/white</item> <!--Cor dos textos -->
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/fita</item>
+        <item name="colorSecondaryVariant">@color/purple_700</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowBackground">@drawable/ic_android_4</item>
+
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

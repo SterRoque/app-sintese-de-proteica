@@ -1,0 +1,692 @@
+<html>
+<head>
+<title>TelaTraducao.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c792ea; font-style: italic;}
+.s1 { color: #eeffff;}
+.s2 { color: #89ddff;}
+.s3 { color: #c3e88d;}
+.s4 { color: #f78c6c;}
+.s5 { color: #616161; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#212121">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TelaTraducao.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">cursodeandroid</span><span class="s2">.</span><span class="s1">sintesedeproteina</span><span class="s2">.</span><span class="s1">activity</span><span class="s2">;</span>
+
+<span class="s0">import static </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Color</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Build</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">Html</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">Spannable</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">SpannableString</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">Spanned</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">style</span><span class="s2">.</span><span class="s1">ForegroundColorSpan</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">Gravity</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">EditText</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">FrameLayout</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">ImageView</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Toast</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">RequiresApi</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AlertDialog</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">cursodeandroid</span><span class="s2">.</span><span class="s1">sintesedeproteina</span><span class="s2">.</span><span class="s1">R</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.*;</span>
+
+<span class="s0">public class </span><span class="s1">TelaTraducao </span><span class="s0">extends </span><span class="s1">TelaPrincipal  </span><span class="s2">{</span>
+
+    <span class="s0">private </span><span class="s1">FrameLayout teclado</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">TextView textFita</span><span class="s2">, </span><span class="s1">textAmino</span><span class="s2">, </span><span class="s1">textFitaCorreta</span><span class="s2">, </span><span class="s1">resultado</span><span class="s2">, </span><span class="s1">textLimpar</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">EditText editText</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">ImageView tabela</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">Button ala</span><span class="s2">, </span><span class="s1">arg</span><span class="s2">, </span><span class="s1">ans</span><span class="s2">, </span><span class="s1">asp</span><span class="s2">, </span><span class="s1">glu</span><span class="s2">, </span><span class="s1">cis</span><span class="s2">, </span><span class="s1">fen</span><span class="s2">, </span><span class="s1">gli</span><span class="s2">, </span><span class="s1">gln</span><span class="s2">, </span><span class="s1">his</span><span class="s2">, </span><span class="s1">ile</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">Button leu</span><span class="s2">, </span><span class="s1">lis</span><span class="s2">, </span><span class="s1">met</span><span class="s2">, </span><span class="s1">pro</span><span class="s2">, </span><span class="s1">ser</span><span class="s2">, </span><span class="s1">tir</span><span class="s2">, </span><span class="s1">tre</span><span class="s2">, </span><span class="s1">trp</span><span class="s2">, </span><span class="s1">val</span><span class="s2">,</span><span class="s1">remove</span><span class="s2">, </span><span class="s1">hifen</span><span class="s2">, </span><span class="s1">fim</span><span class="s2">, </span><span class="s1">ajuda</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String rna</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">Spanned rnaCustom</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String ligPeptidica</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String digitado </span><span class="s2">= </span><span class="s3">&quot;&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String fita </span><span class="s2">= </span><span class="s3">&quot;&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String</span><span class="s2">[] </span><span class="s1">fitaTrincas</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">Bundle dados</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">resposta </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt;();</span>
+    <span class="s0">public </span><span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">aminoacidos </span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashMap</span><span class="s2">&lt;&gt;();</span>
+    <span class="s0">private </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">rnaList </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+    <span class="s0">private static int </span><span class="s1">CONTROLE </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+    <span class="s1">String inicioFita</span><span class="s2">;</span>
+    <span class="s1">String fimFita</span><span class="s2">;</span>
+    <span class="s1">String fitaMeio</span><span class="s2">;</span>
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_tela_traducao2</span><span class="s2">);</span>
+
+        <span class="s1">getSupportActionBar</span><span class="s2">().</span><span class="s1">hide</span><span class="s2">();</span>
+
+
+
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UUU&quot;</span><span class="s2">, </span><span class="s3">&quot;Fen&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UUC&quot;</span><span class="s2">, </span><span class="s3">&quot;Fen&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UUA&quot;</span><span class="s2">, </span><span class="s3">&quot;Leu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UUG&quot;</span><span class="s2">, </span><span class="s3">&quot;Leu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UCU&quot;</span><span class="s2">, </span><span class="s3">&quot;Ser&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UCC&quot;</span><span class="s2">, </span><span class="s3">&quot;Ser&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UCA&quot;</span><span class="s2">, </span><span class="s3">&quot;Ser&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UCG&quot;</span><span class="s2">, </span><span class="s3">&quot;Ser&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UAU&quot;</span><span class="s2">, </span><span class="s3">&quot;Tir&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UAC&quot;</span><span class="s2">, </span><span class="s3">&quot;Tir&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UAA&quot;</span><span class="s2">, </span><span class="s3">&quot;Fim&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UAG&quot;</span><span class="s2">, </span><span class="s3">&quot;Fim&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UGU&quot;</span><span class="s2">, </span><span class="s3">&quot;Cis&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UGC&quot;</span><span class="s2">, </span><span class="s3">&quot;Cis&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UGA&quot;</span><span class="s2">, </span><span class="s3">&quot;Fim&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;UGG&quot;</span><span class="s2">, </span><span class="s3">&quot;Trp&quot;</span><span class="s2">);</span>
+
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CUU&quot;</span><span class="s2">, </span><span class="s3">&quot;Leu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CUC&quot;</span><span class="s2">, </span><span class="s3">&quot;Leu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CUA&quot;</span><span class="s2">, </span><span class="s3">&quot;Leu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CUG&quot;</span><span class="s2">, </span><span class="s3">&quot;Leu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CCU&quot;</span><span class="s2">, </span><span class="s3">&quot;Pro&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CCC&quot;</span><span class="s2">, </span><span class="s3">&quot;Pro&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CCA&quot;</span><span class="s2">, </span><span class="s3">&quot;Pro&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CCG&quot;</span><span class="s2">, </span><span class="s3">&quot;Pro&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CAU&quot;</span><span class="s2">, </span><span class="s3">&quot;His&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CAC&quot;</span><span class="s2">, </span><span class="s3">&quot;His&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CAA&quot;</span><span class="s2">, </span><span class="s3">&quot;Gln&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CAG&quot;</span><span class="s2">, </span><span class="s3">&quot;Gln&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CGU&quot;</span><span class="s2">, </span><span class="s3">&quot;Arg&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CGC&quot;</span><span class="s2">, </span><span class="s3">&quot;Arg&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CGA&quot;</span><span class="s2">, </span><span class="s3">&quot;Arg&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;CGG&quot;</span><span class="s2">, </span><span class="s3">&quot;Arg&quot;</span><span class="s2">);</span>
+
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AUU&quot;</span><span class="s2">, </span><span class="s3">&quot;Ile&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AUC&quot;</span><span class="s2">, </span><span class="s3">&quot;Ile&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AUA&quot;</span><span class="s2">, </span><span class="s3">&quot;Ile&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AUG&quot;</span><span class="s2">, </span><span class="s3">&quot;Met&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;ACU&quot;</span><span class="s2">, </span><span class="s3">&quot;Tre&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;ACC&quot;</span><span class="s2">, </span><span class="s3">&quot;Tre&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;ACA&quot;</span><span class="s2">, </span><span class="s3">&quot;Tre&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;ACG&quot;</span><span class="s2">, </span><span class="s3">&quot;Tre&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AAU&quot;</span><span class="s2">, </span><span class="s3">&quot;Ans&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AAC&quot;</span><span class="s2">, </span><span class="s3">&quot;Ans&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AAA&quot;</span><span class="s2">, </span><span class="s3">&quot;Lis&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AAG&quot;</span><span class="s2">, </span><span class="s3">&quot;Lis&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AGU&quot;</span><span class="s2">, </span><span class="s3">&quot;Ser&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AGC&quot;</span><span class="s2">, </span><span class="s3">&quot;Ser&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AGA&quot;</span><span class="s2">, </span><span class="s3">&quot;Arg&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;AGG&quot;</span><span class="s2">, </span><span class="s3">&quot;Arg&quot;</span><span class="s2">);</span>
+
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GUU&quot;</span><span class="s2">, </span><span class="s3">&quot;Val&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GUC&quot;</span><span class="s2">, </span><span class="s3">&quot;Val&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GUA&quot;</span><span class="s2">, </span><span class="s3">&quot;Val&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GUG&quot;</span><span class="s2">, </span><span class="s3">&quot;Val&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GCU&quot;</span><span class="s2">, </span><span class="s3">&quot;Ala&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GCC&quot;</span><span class="s2">, </span><span class="s3">&quot;Ala&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GCA&quot;</span><span class="s2">, </span><span class="s3">&quot;Ala&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GCG&quot;</span><span class="s2">, </span><span class="s3">&quot;Ala&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GAU&quot;</span><span class="s2">, </span><span class="s3">&quot;Asp&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GAC&quot;</span><span class="s2">, </span><span class="s3">&quot;Asp&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GAA&quot;</span><span class="s2">, </span><span class="s3">&quot;Glu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GAG&quot;</span><span class="s2">, </span><span class="s3">&quot;Glu&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GGU&quot;</span><span class="s2">, </span><span class="s3">&quot;Gli&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GGC&quot;</span><span class="s2">, </span><span class="s3">&quot;Gli&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GGA&quot;</span><span class="s2">, </span><span class="s3">&quot;Gli&quot;</span><span class="s2">);</span>
+        <span class="s1">aminoacidos</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;GGG&quot;</span><span class="s2">, </span><span class="s3">&quot;Gli&quot;</span><span class="s2">);</span>
+
+
+        <span class="s1">textFita </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">textFita</span><span class="s2">);</span>
+        <span class="s1">textAmino </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">textAmino</span><span class="s2">);</span>
+        <span class="s1">textFitaCorreta </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">textFitaCorreta</span><span class="s2">);</span>
+        <span class="s1">textLimpar </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">textLimpar</span><span class="s2">);</span>
+        <span class="s1">resultado </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">resultado</span><span class="s2">);</span>
+        <span class="s1">editText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">editText</span><span class="s2">);</span>
+        <span class="s1">tabela </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">tabela</span><span class="s2">);</span>
+        <span class="s1">fim </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnFim</span><span class="s2">);</span>
+        <span class="s1">teclado </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">teclado</span><span class="s2">);</span>
+        <span class="s1">ala </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">ala</span><span class="s2">);</span>
+        <span class="s1">arg </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">arg</span><span class="s2">);</span>
+        <span class="s1">ans </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">ans</span><span class="s2">);</span>
+        <span class="s1">asp </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">asp</span><span class="s2">);</span>
+        <span class="s1">glu </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">glu</span><span class="s2">);</span>
+        <span class="s1">cis </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">cis</span><span class="s2">);</span>
+        <span class="s1">fen </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">fen</span><span class="s2">);</span>
+        <span class="s1">gli </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">gli</span><span class="s2">);</span>
+        <span class="s1">gln </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">gln</span><span class="s2">);</span>
+        <span class="s1">his </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">his</span><span class="s2">);</span>
+        <span class="s1">ile </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">ile</span><span class="s2">);</span>
+        <span class="s1">leu </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">leu</span><span class="s2">);</span>
+        <span class="s1">lis </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">lis</span><span class="s2">);</span>
+        <span class="s1">met </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">met</span><span class="s2">);</span>
+        <span class="s1">pro </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">pro</span><span class="s2">);</span>
+        <span class="s1">ser </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">ser</span><span class="s2">);</span>
+        <span class="s1">tir </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">tir</span><span class="s2">);</span>
+        <span class="s1">tre </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">tre</span><span class="s2">);</span>
+        <span class="s1">trp </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">trp</span><span class="s2">);</span>
+        <span class="s1">val </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">val</span><span class="s2">);</span>
+        <span class="s1">remove </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">);</span>
+        <span class="s1">hifen </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">hifen</span><span class="s2">);</span>
+        <span class="s1">ajuda </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">button2</span><span class="s2">);</span>
+
+
+        <span class="s1">dados </span><span class="s2">= </span><span class="s1">getIntent</span><span class="s2">().</span><span class="s1">getExtras</span><span class="s2">();</span>
+        <span class="s1">rna </span><span class="s2">= </span><span class="s1">dados</span><span class="s2">.</span><span class="s1">getString</span><span class="s2">(</span><span class="s3">&quot;RnaM&quot;</span><span class="s2">);</span>
+        <span class="s1">ligPeptidica </span><span class="s2">= </span><span class="s1">dados</span><span class="s2">.</span><span class="s1">getString</span><span class="s2">(</span><span class="s3">&quot;Trad&quot;</span><span class="s2">);</span>
+        <span class="s1">fitaTrincas </span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">split</span><span class="s2">(</span><span class="s3">&quot; &quot;</span><span class="s2">);</span>
+
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">textAmino</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">textLimpar</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">tabela</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">editText</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">fim</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">teclado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+
+        <span class="s0">int </span><span class="s1">indiceAUG </span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">indexOf</span><span class="s2">(</span><span class="s3">&quot;AUG&quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">indiceFIM </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">rna</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;UAA&quot;</span><span class="s2">)){</span>
+            <span class="s0">int </span><span class="s1">fim </span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">indexOf</span><span class="s2">(</span><span class="s3">&quot;UAA&quot;</span><span class="s2">);</span>
+            <span class="s1">indiceFIM </span><span class="s2">= </span><span class="s1">fim</span><span class="s2">+</span><span class="s4">3</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">rna</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;UGA&quot;</span><span class="s2">)){</span>
+            <span class="s0">int </span><span class="s1">fim </span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">indexOf</span><span class="s2">(</span><span class="s3">&quot;UGA&quot;</span><span class="s2">);</span>
+            <span class="s1">indiceFIM </span><span class="s2">= </span><span class="s1">fim</span><span class="s2">+</span><span class="s4">3</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">rna</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;UAG&quot;</span><span class="s2">)){</span>
+            <span class="s0">int </span><span class="s1">fim</span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">indexOf</span><span class="s2">(</span><span class="s3">&quot;UAG&quot;</span><span class="s2">);</span>
+            <span class="s1">indiceFIM </span><span class="s2">= </span><span class="s1">fim</span><span class="s2">+</span><span class="s4">3</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+
+        <span class="s1">inicioFita </span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">substring</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s1">indiceAUG</span><span class="s2">);</span>
+        <span class="s1">fimFita </span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">substring</span><span class="s2">(</span><span class="s1">indiceFIM</span><span class="s2">);</span>
+        <span class="s1">fitaMeio </span><span class="s2">= </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">substring</span><span class="s2">(</span><span class="s1">indiceAUG</span><span class="s2">, </span><span class="s1">indiceFIM</span><span class="s2">);</span>
+
+        <span class="s5">/*String inicioFita = rna.substring(0, indiceAUG); 
+        String fimFita = rna.substring(indiceFIM); 
+        String fitaMeio = rna.substring(indiceAUG, indiceFIM);*/</span>
+       <span class="s5">/* if(CONTROLE == 0){ 
+            iniciaFita(fitaMeio); 
+            CONTROLE++; 
+        }else{ 
+        }*/</span>
+
+       <span class="s5">/* rnaCustom = Html.fromHtml(&quot;&lt;font color=gray&gt;&quot; + inicioFita + &quot;&lt;/font&gt;&quot; 
+                + colorir().toString()+ 
+                &quot;&lt;font color=gray&gt;&quot; + fimFita +&quot;&lt;/font&gt;&quot;); 
+        System.out.println(colorir().toString());*/</span>
+        <span class="s1">rnaCustom </span><span class="s2">= </span><span class="s1">Html</span><span class="s2">.</span><span class="s1">fromHtml</span><span class="s2">(</span><span class="s3">&quot;&lt;font color=gray&gt;&quot; </span><span class="s2">+ </span><span class="s1">inicioFita</span>
+                <span class="s2">+</span><span class="s3">&quot;&lt;/font&gt;&quot; </span><span class="s2">+ </span><span class="s1">fitaMeio </span><span class="s2">+ </span><span class="s3">&quot;&lt;font &quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;color=gray&gt;&quot; </span><span class="s2">+ </span><span class="s1">fimFita </span><span class="s2">+</span><span class="s3">&quot;&lt;/font&gt;&quot;</span><span class="s2">);</span>
+
+
+        <span class="s1">ajuda</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+                <span class="s1">AlertDialog</span><span class="s2">.</span><span class="s1">Builder alert </span><span class="s2">= </span><span class="s0">new </span><span class="s1">AlertDialog</span><span class="s2">.</span><span class="s1">Builder</span><span class="s2">(</span><span class="s1">TelaTraducao</span><span class="s2">.</span><span class="s0">this</span><span class="s2">);</span>
+                <span class="s1">View v </span><span class="s2">= </span><span class="s1">getLayoutInflater</span><span class="s2">().</span><span class="s1">inflate</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">dialog_traducao</span><span class="s2">, </span><span class="s0">null</span><span class="s2">);</span>
+                <span class="s1">Button fechar </span><span class="s2">= </span><span class="s1">v</span><span class="s2">.</span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnFechar</span><span class="s2">);</span>
+                <span class="s1">alert</span><span class="s2">.</span><span class="s1">setView</span><span class="s2">(</span><span class="s1">v</span><span class="s2">);</span>
+                <span class="s1">AlertDialog dialog </span><span class="s2">= </span><span class="s1">alert</span><span class="s2">.</span><span class="s1">create</span><span class="s2">();</span>
+                <span class="s1">dialog</span><span class="s2">.</span><span class="s1">show</span><span class="s2">();</span>
+                <span class="s1">fechar</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+                    <span class="s1">@Override</span>
+                    <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                        <span class="s1">dialog</span><span class="s2">.</span><span class="s1">hide</span><span class="s2">();</span>
+                    <span class="s2">}</span>
+                <span class="s2">});</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+    <span class="s2">}</span>
+
+    <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">FitaRna</span><span class="s2">&gt; </span><span class="s1">listaFita</span><span class="s2">;</span>
+<span class="s0">public void </span><span class="s1">reimprimir</span><span class="s2">() {</span>
+    <span class="s1">rnaCustom </span><span class="s2">= </span><span class="s1">Html</span><span class="s2">.</span><span class="s1">fromHtml</span><span class="s2">(</span><span class="s3">&quot;&lt;font color=gray&gt;&quot; </span><span class="s2">+ </span><span class="s1">inicioFita </span><span class="s2">+ </span><span class="s3">&quot;&lt;/font&gt;&quot;</span>
+            <span class="s2">+ </span><span class="s1">colorir</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">()+</span>
+            <span class="s3">&quot;&lt;font color=gray&gt;&quot; </span><span class="s2">+ </span><span class="s1">fimFita </span><span class="s2">+</span><span class="s3">&quot;&lt;/font&gt;&quot;</span><span class="s2">);</span>
+<span class="s2">}</span>
+    <span class="s0">public </span><span class="s1">StringBuilder colorir</span><span class="s2">() {</span>
+        <span class="s1">StringBuilder sbHTML </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringBuilder</span><span class="s2">();</span>
+        <span class="s1">String seila</span><span class="s2">;</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">FitaRna f </span><span class="s2">: </span><span class="s1">listaFita</span><span class="s2">) {</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">f</span><span class="s2">.</span><span class="s1">getCor</span><span class="s2">() == </span><span class="s0">null</span><span class="s2">) {</span>
+                <span class="s1">seila </span><span class="s2">= </span><span class="s3">&quot;&lt;font color=</span><span class="s2">\&quot;</span><span class="s3">#D52973</span><span class="s2">\&quot;</span><span class="s3">&gt;&quot; </span><span class="s2">+ </span><span class="s1">f</span><span class="s2">.</span><span class="s1">codon </span><span class="s2">+ </span><span class="s3">&quot;&lt;/font&gt;&quot;</span><span class="s2">;</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">seila </span><span class="s2">= </span><span class="s3">&quot;&lt;font color=</span><span class="s2">\&quot;</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s1">f</span><span class="s2">.</span><span class="s1">cor </span><span class="s2">+ </span><span class="s3">&quot;</span><span class="s2">\&quot;</span><span class="s3">&gt;&quot; </span><span class="s2">+ </span><span class="s1">f</span><span class="s2">.</span><span class="s1">codon </span><span class="s2">+ </span><span class="s3">&quot;&lt;/font&gt;&quot;</span><span class="s2">;</span>
+            <span class="s2">}</span>
+
+            <span class="s1">sbHTML</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">seila</span><span class="s2">);</span>
+            <span class="s1">seila </span><span class="s2">= </span><span class="s3">&quot;&quot;</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s0">return </span><span class="s1">sbHTML</span><span class="s2">;</span>
+
+
+    <span class="s2">}</span>
+
+    <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">fitaCort </span><span class="s2">= </span><span class="s1">Arrays</span><span class="s2">.</span><span class="s1">asList</span><span class="s2">(</span><span class="s1">rna</span><span class="s2">.</span><span class="s1">split</span><span class="s2">(</span><span class="s3">&quot; &quot;</span><span class="s2">));</span>
+    <span class="s1">@RequiresApi</span><span class="s2">(</span><span class="s1">api </span><span class="s2">= </span><span class="s1">Build</span><span class="s2">.</span><span class="s1">VERSION_CODES</span><span class="s2">.</span><span class="s1">KITKAT</span><span class="s2">)</span>
+    <span class="s0">public </span><span class="s1">Spannable colorida </span><span class="s2">(</span><span class="s1">String amino</span><span class="s2">){</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">amin </span><span class="s2">= </span><span class="s1">getKeyByValue</span><span class="s2">(</span><span class="s1">aminoacidos</span><span class="s2">, </span><span class="s1">amino</span><span class="s2">);</span>
+        <span class="s1">String f </span><span class="s2">= </span><span class="s3">&quot;&quot;</span><span class="s2">;</span>
+        <span class="s1">Spannable fitaCustom </span><span class="s2">= </span><span class="s0">null</span><span class="s2">;</span>
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">fitaCort</span><span class="s2">.</span><span class="s1">size</span><span class="s2">(); </span><span class="s1">i</span><span class="s2">++){</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">fitaCort</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s1">amin</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">i</span><span class="s2">))){</span>
+                <span class="s1">fitaCustom </span><span class="s2">= </span><span class="s1">colorir</span><span class="s2">(</span><span class="s1">rna</span><span class="s2">, </span><span class="s1">amin</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">i</span><span class="s2">), </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">RED</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s0">return  </span><span class="s1">fitaCustom</span><span class="s2">;</span>
+
+    <span class="s2">}</span>
+    <span class="s1">@RequiresApi</span><span class="s2">(</span><span class="s1">api </span><span class="s2">= </span><span class="s1">Build</span><span class="s2">.</span><span class="s1">VERSION_CODES</span><span class="s2">.</span><span class="s1">KITKAT</span><span class="s2">)</span>
+    <span class="s0">static </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">getKeyByValue</span><span class="s2">(</span><span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">map</span><span class="s2">, </span><span class="s1">String value</span><span class="s2">){</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">lstCodon </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Map</span><span class="s2">.</span><span class="s1">Entry</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">entry </span><span class="s2">: </span><span class="s1">map</span><span class="s2">.</span><span class="s1">entrySet</span><span class="s2">()) {</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">Objects</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">entry</span><span class="s2">.</span><span class="s1">getValue</span><span class="s2">(), </span><span class="s1">value</span><span class="s2">)) {</span>
+                <span class="s1">lstCodon</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">entry</span><span class="s2">.</span><span class="s1">getKey</span><span class="s2">());</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s0">return </span><span class="s1">lstCodon</span><span class="s2">;</span>
+
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">defineCor</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">FitaRna</span><span class="s2">&gt; </span><span class="s1">listaFita</span><span class="s2">, </span><span class="s1">String fita</span><span class="s2">){</span>
+        <span class="s0">int </span><span class="s1">posicao </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s0">for</span><span class="s2">(</span><span class="s1">FitaRna f </span><span class="s2">: </span><span class="s1">listaFita</span><span class="s2">){</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">f</span><span class="s2">.</span><span class="s1">codon </span><span class="s2">+ </span><span class="s3">&quot; == &quot; </span><span class="s2">+ </span><span class="s1">fita</span><span class="s2">);</span>
+
+            <span class="s0">if</span><span class="s2">(</span><span class="s1">f</span><span class="s2">.</span><span class="s1">codon</span><span class="s2">.</span><span class="s1">compareTo</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">) == </span><span class="s4">0</span><span class="s2">){</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Definiu a cor &quot;</span><span class="s2">);</span>
+                <span class="s1">f</span><span class="s2">.</span><span class="s1">setCor</span><span class="s2">(</span><span class="s3">&quot;#12D445&quot;</span><span class="s2">);</span>
+                <span class="s1">listaFita</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">posicao</span><span class="s2">, </span><span class="s1">f</span><span class="s2">);</span>
+                <span class="s0">break</span><span class="s2">;</span>
+            <span class="s2">}</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Definiu NADA &quot;</span><span class="s2">);</span>
+            <span class="s1">posicao</span><span class="s2">++;</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">iniciaFita</span><span class="s2">(</span><span class="s1">String fitaMeio</span><span class="s2">){</span>
+        <span class="s1">listaFita </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+
+        <span class="s0">for</span><span class="s2">(</span><span class="s1">String valor </span><span class="s2">: </span><span class="s1">fitaMeio</span><span class="s2">.</span><span class="s1">split</span><span class="s2">(</span><span class="s3">&quot; &quot;</span><span class="s2">)){</span>
+
+            <span class="s1">listaFita</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">FitaRna</span><span class="s2">(</span><span class="s1">valor</span><span class="s2">, </span><span class="s0">false</span><span class="s2">,</span><span class="s0">true</span><span class="s2">));</span>
+        <span class="s2">}</span>
+        <span class="s1">CONTROLE</span><span class="s2">++;</span>
+
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">limpar</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">){</span>
+        <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+        <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+        <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+        <span class="s1">resposta</span><span class="s2">.</span><span class="s1">clear</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">limpar</span><span class="s2">(){</span>
+        <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+        <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+        <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+        <span class="s1">resposta</span><span class="s2">.</span><span class="s1">clear</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">buttonAutoTrad</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">){</span>
+
+        <span class="s1">editText</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">tabela</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">textLimpar</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">fim</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">teclado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setGravity</span><span class="s2">(</span><span class="s1">Gravity</span><span class="s2">.</span><span class="s1">CENTER</span><span class="s2">);</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setTranslationY</span><span class="s2">(</span><span class="s4">100</span><span class="s2">);</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">rnaCustom</span><span class="s2">);</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">rna</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;UAA&quot;</span><span class="s2">) || </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;UGA&quot;</span><span class="s2">) || </span><span class="s1">rna</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;UAG&quot;</span><span class="s2">)){</span>
+            <span class="s1">makeText</span><span class="s2">(</span>
+                    <span class="s0">this</span><span class="s2">,</span>
+                    <span class="s3">&quot;Tradução finalizada&quot;</span><span class="s2">,</span>
+                    <span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span>
+            <span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+        <span class="s2">}</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+        <span class="s1">textAmino</span><span class="s2">.</span><span class="s1">setTranslationY</span><span class="s2">(</span><span class="s4">200</span><span class="s2">);</span>
+        <span class="s1">textAmino</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">ligPeptidica</span><span class="s2">);</span>
+
+
+        <span class="s1">textAmino</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">buttonFazerTrad</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">){</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+        <span class="s1">tabela</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+        <span class="s1">editText</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+        <span class="s1">textLimpar</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+        <span class="s1">fim</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+        <span class="s1">textAmino</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">GONE</span><span class="s2">);</span>
+        <span class="s1">teclado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setTranslationY</span><span class="s2">(-</span><span class="s4">30</span><span class="s2">);</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setGravity</span><span class="s2">(</span><span class="s1">Gravity</span><span class="s2">.</span><span class="s1">LEFT</span><span class="s2">);</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">rnaCustom</span><span class="s2">);</span>
+        <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+
+        <span class="s1">remove</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s0">if </span><span class="s2">(!</span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()){</span>
+                    <span class="s1">resposta</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">size</span><span class="s2">()-</span><span class="s4">1</span><span class="s2">);</span>
+                    <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                    <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                                <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                                <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+
+
+                    <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+                <span class="s2">}</span><span class="s0">else if </span><span class="s2">(</span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()){</span>
+                    <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span>
+                            <span class="s1">getApplicationContext</span><span class="s2">(),</span>
+                            <span class="s3">&quot;Traduza o gene&quot;</span><span class="s2">,</span>
+                            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span>
+                    <span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">hifen</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;-&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">,</span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">ala</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Ala&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                            <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                            <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">arg</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Arg&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">ans</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Ans&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">asp</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Asp&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">glu</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Glu&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">cis</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Cis&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">fen</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Fen&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">gli</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Gli&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">gln</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Gln&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">his</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;His&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">ile</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Ile&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">leu</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Leu&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">lis</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Lis&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">met</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@RequiresApi</span><span class="s2">(</span><span class="s1">api </span><span class="s2">= </span><span class="s1">Build</span><span class="s2">.</span><span class="s1">VERSION_CODES</span><span class="s2">.</span><span class="s1">KITKAT</span><span class="s2">)</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Met&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+
+                <span class="s5">//Spannable fitaCustom = colorir(rna, &quot;AUG&quot;, Color.RED);</span>
+                <span class="s1">Spannable f </span><span class="s2">= </span><span class="s1">colorida</span><span class="s2">(</span><span class="s3">&quot;Met&quot;</span><span class="s2">);</span>
+                <span class="s1">textFita</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">f</span><span class="s2">);</span>
+                <span class="s5">//defineCor(listaFita, fita);</span>
+                <span class="s5">//reimprimir();</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">pro</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Pro&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">ser</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Ser&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">tir</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Tir&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">tre</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Tre&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">trp</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Trp&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+        <span class="s1">val</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">resposta</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s3">&quot;Val&quot;</span><span class="s2">);</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">resposta</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">fita </span><span class="s2">= </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;[&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;]&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">)</span>
+                        <span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s3">&quot;&quot;</span><span class="s2">);</span>
+                <span class="s1">editText</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">btnFim</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">){</span>
+        <span class="s1">fita </span><span class="s2">= </span><span class="s1">editText</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">fita</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s1">ligPeptidica</span><span class="s2">) || </span><span class="s1">fita</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s1">ligPeptidica</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">&quot; - &quot;</span><span class="s2">, </span><span class="s3">&quot; &quot;</span><span class="s2">))) {</span>
+            <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">fita</span><span class="s2">);</span>
+            <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;Correto, você acertou!!&quot;</span><span class="s2">);</span>
+            <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+            <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#008807&quot;</span><span class="s2">));</span>
+            <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+            <span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s3">&quot;Tradução Finalizada&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+
+        <span class="s2">}    </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;Tradução correta: &quot; </span><span class="s2">+ </span><span class="s1">ligPeptidica</span><span class="s2">);</span>
+            <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;Você errou :(&quot;</span><span class="s2">);</span>
+            <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+            <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#B00020&quot;</span><span class="s2">));</span>
+            <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+
+        <span class="s2">}</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">fita</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+            <span class="s1">textFitaCorreta</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+            <span class="s1">resultado</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+            <span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s3">&quot;Traduza o gene&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+    <span class="s0">public static </span><span class="s1">Spannable colorir</span><span class="s2">(</span><span class="s0">final </span><span class="s1">String text</span><span class="s2">, </span><span class="s0">final </span><span class="s1">String word</span><span class="s2">, </span><span class="s0">final int </span><span class="s1">color</span><span class="s2">) {</span>
+        <span class="s0">final </span><span class="s1">Spannable spannable </span><span class="s2">= </span><span class="s0">new </span><span class="s1">SpannableString</span><span class="s2">(</span><span class="s1">text</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">substringStart</span><span class="s2">=</span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">start</span><span class="s2">;</span>
+        <span class="s0">while</span><span class="s2">((</span><span class="s1">start</span><span class="s2">=</span><span class="s1">text</span><span class="s2">.</span><span class="s1">indexOf</span><span class="s2">(</span><span class="s1">word</span><span class="s2">,</span><span class="s1">substringStart</span><span class="s2">))&gt;=</span><span class="s4">0</span><span class="s2">){</span>
+            <span class="s1">spannable</span><span class="s2">.</span><span class="s1">setSpan</span><span class="s2">(</span>
+                    <span class="s0">new </span><span class="s1">ForegroundColorSpan</span><span class="s2">(</span><span class="s1">color</span><span class="s2">),</span><span class="s1">start</span><span class="s2">,</span><span class="s1">start</span><span class="s2">+</span><span class="s1">word</span><span class="s2">.</span><span class="s1">length</span><span class="s2">(),</span>
+                    <span class="s1">Spannable</span><span class="s2">.</span><span class="s1">SPAN_EXCLUSIVE_EXCLUSIVE</span>
+            <span class="s2">);</span>
+            <span class="s1">substringStart </span><span class="s2">= </span><span class="s1">start</span><span class="s2">+</span><span class="s1">word</span><span class="s2">.</span><span class="s1">length</span><span class="s2">();</span>
+        <span class="s2">}</span>
+        <span class="s0">return </span><span class="s1">spannable</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+</pre>
+</body>
+</html>

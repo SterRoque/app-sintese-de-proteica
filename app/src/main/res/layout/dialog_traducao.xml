@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDE2D9"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C9D2FF"
+        android:drawableLeft="@drawable/ic_baseline_warning_24"
+        android:gravity="center"
+
+        android:padding="5dp"
+        android:text="Relembre a tradução "
+        android:textAllCaps="false"
+        android:textColor="@color/vermelho"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Na tradução você vai precisar colocar o aminoacido que cada códon (trinca) de RNA traduz.\n\nPara isso você vai observar os códons na fita de RNA, e procurar a mesma sequência na tabela e colocar o aminoácido correspondente.\n\nEx: AGA traduz o aminoácido Arg(arginina)."
+        android:textColor="@color/fita"
+
+        />
+
+    <Button
+        android:id="@+id/btnFechar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="fechar" />
+
+</LinearLayout>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".activity.TelaQuestionario">
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:text="1-) As proteínas são macromoleculas formadas pelos elementos:"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/opcaoResposta01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A)  cloro(Cl), bromo(Br), nitrogênio(N) e enxofre(S)" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B)  carbono(C), oxigênio(O), hidrogênio(H) e fosforo(P)" />
+
+        <RadioButton
+            android:id="@+id/correta1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C)  carbono(C), oxigênio(O), hidrogênio(H) e nitrogênio(N)/enxofre(S)" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="10dp"
+        android:text="2-) No final da duplicação se obtém o que?"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/opcaoResposta02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A) Uma fita de RNAm." />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B) Um ribossomo" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C) Uma nova fita de DNA diferente da fita primaria." />
+
+        <RadioButton
+            android:id="@+id/radioRespostaCorreta02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D) Uma nova fita de DNA idêntica a fita primara" />
+
+        <RadioButton
+            android:id="@+id/correta2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E) Um novo gene de DNA" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="10dp"
+        android:text="3-) No processo de transcrição o gene de DNA é transcrito para RNAm. Quais ligações nas bases nitrogenadas ocorrem nesse processo do DNA para RNA respectivamente?"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/opcaoResposta03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A)  A-T, T-A, C-G, G-C." />
+
+        <RadioButton
+            android:id="@+id/radioRespostaCorreta03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B)  A-G, T-A, G-U, C-T." />
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C)  A-A, T-T, G-G, C-C." />
+
+        <RadioButton
+            android:id="@+id/radioButton12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D)  T-U, A-T, C-G, G-C." />
+
+        <RadioButton
+            android:id="@+id/correta3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E)  A-U, T-A, C-G, G-C." />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="10dp"
+        android:text="4-) Polímeros são macromoléculas formadas por molécula menores chamados monômeros. Os ácidos nucleicos (DNA e RNA) são polímeros formado por estruturas menores chamadas:"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/opcaoResposta04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A)  Aminoácidos" />
+
+        <RadioButton
+            android:id="@+id/radioRespostaCorreta04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B)  Pentoses" />
+
+        <RadioButton
+            android:id="@+id/correta4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C)  Nucleotídeos" />
+
+        <RadioButton
+            android:id="@+id/radioButton16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D)  Ribose" />
+
+        <RadioButton
+            android:id="@+id/radioButton17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E)  Ribossomos" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="10dp"
+        android:text="5-) Depois de transcrito o RNAm percorre um caminho até encontrar o ribossomo. Qual o caminho percorrido até iniciar a tradução?"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/opcaoResposta05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A)  Núcleo celular -> citoplasma -> mitocôndria." />
+
+        <RadioButton
+            android:id="@+id/correta5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B)  Núcleo celular -> citoplasma." />
+
+        <RadioButton
+            android:id="@+id/radioButton20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C)  Citoplasma -> núcleo celular." />
+
+        <RadioButton
+            android:id="@+id/radioButton21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D)  Citoplasma -> lisossomo." />
+
+        <RadioButton
+            android:id="@+id/radioButton22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E)  Núcleo celular -> mitocôndria ->citoplasma." />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="10dp"
+        android:text="6-) A tradução ocorre com auxílio do RNA ribossômico. O ribossomo procura por um códon de inicialização para poder codificar os aminoácidos até encontrar o códon de terminação que finaliza a tradução. Indique o códon de inicialização e um códon de terminação respectivamente."
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/opcaoResposta06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/correta6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A)  AUG ... UGA." />
+
+        <RadioButton
+            android:id="@+id/radioButton24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B)  UGG ... UGA." />
+
+        <RadioButton
+            android:id="@+id/radioButton25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C)  UGA ... UGG." />
+
+        <RadioButton
+            android:id="@+id/radioButton26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D)  UAG ... AUG." />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnFinalizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finalizar" />
+
+</LinearLayout>
+</ScrollView>

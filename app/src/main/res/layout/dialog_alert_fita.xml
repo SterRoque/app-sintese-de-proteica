@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDE2D9"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C9D2FF"
+        android:drawableLeft="@drawable/ic_baseline_warning_24"
+        android:gravity="center"
+
+        android:padding="5dp"
+        android:text="FITA INVALIDA"
+        android:textAllCaps="false"
+        android:textColor="@color/vermelho"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Para uma fita de DNA ser válida. ela precisa ter a inicialização (TAC) e uma das terminações (ATT, ATC, ACT) "
+        android:textColor="@color/fita"
+
+        />
+
+    <Button
+        android:id="@+id/btnFechar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="fechar" />
+
+</LinearLayout>

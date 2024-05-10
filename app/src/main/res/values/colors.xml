@@ -8,10 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="marelo">#FFEF89</color>
-    <color name="colorPrimary">#FF7700</color>
-    <color name="colorSecundary">#953D01</color>
+    <color name="colorPrimary">#FF6600</color>
+    <color name="colorSecundary">#C34E00</color>
     <color name="background">#FFEDEB</color>
+    <color name="background2">#FFFFFF</color>
     <color name="vermelho">#B00020</color>
     <color name="fita">#0054E4</color>
     <color name="verde">#008807</color>
+
 </resources>

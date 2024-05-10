@@ -10,22 +10,52 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SinteseDeProteina">
         <activity
-            android:name=".TelaInicial"
+            android:name=".activity.Exercicios"
             android:exported="true" />
         <activity
-            android:name=".TelaTraducao"
+            android:name=".activity.ConteudoProteina"
             android:exported="true" />
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".activity.ConteudoTraducao"
             android:exported="true" />
         <activity
-            android:name=".TelaTranscricao"
+            android:name=".activity.ConteudoTranscricao"
             android:exported="true" />
         <activity
-            android:name=".TelaDuplicação"
+            android:name=".activity.ConteudoDuplicacao"
             android:exported="true" />
         <activity
-            android:name=".TelaSplash"
+            android:name=".activity.ConteudoAcidos"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaConteudoDuplicacao"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaQuestionarioResultado"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaQuestionario"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaConteudo"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaInicial"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaTraducao"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaPrincipal"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaTranscricao"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaDuplicação"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TelaSplash"
             android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +63,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

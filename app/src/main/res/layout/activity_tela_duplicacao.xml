@@ -1,20 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaDuplicação">
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginStart="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginRight="20dp"
+    tools:context=".activity.TelaDuplicação">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="32dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_baseline_help_center_24"
+        app:backgroundTint="@color/fita"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonFazerDup"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textLimpar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="limpar"
+        android:text="Limpar"
+        android:textColor="@color/vermelho"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.959"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fazerDup" />
 
     <Button
         android:id="@+id/buttonAutoDup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
+        android:background="@drawable/button"
         android:text="Auto \n Duplicação"
         android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonFazerDup"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFazerDup"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -22,42 +64,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:text="Fazer a \n Duplicação"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button"
+        android:text="Faça \nDuplicação"
         android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toEndOf="@+id/buttonAutoDup"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textDna"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="monospace"
+        android:gravity="left"
         android:text="fita de DNA"
-        android:textIsSelectable="true"
         android:textColor="@color/fita"
+        android:textIsSelectable="true"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAutoDup" />
 
     <EditText
         android:id="@+id/fazerDup"
-        android:layout_width="344dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:editable="false"
         android:ems="10"
+        android:fontFamily="monospace"
         android:hint="Faça a duplicação do DNA acima"
-        android:inputType="textPersonName"
+        android:inputType="none"
+        android:singleLine="false"
+        android:textColor="@color/verde"
         android:textIsSelectable="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDna" />
 
@@ -65,27 +119,127 @@
         android:id="@+id/buttonDuplicar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button"
         android:text="DUPLICAR"
         android:textStyle="bold"
         android:visibility="visible"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fazerDup" />
+        app:layout_constraintTop_toBottomOf="@+id/tecladoDup" />
 
     <TextView
-        android:id="@+id/resposta"
+        android:id="@+id/radioGroupEscolha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
         android:text="resposta"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFitaDup" />
+
+    <TextView
+        android:id="@+id/textFitaDup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="fitaDup"
+        android:textColor="@color/fita"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDuplicar" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tecladoDup"
+        android:layout_width="357dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:background="#D13200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fazerDup">
+
+        <Button
+            android:id="@+id/btnT"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/button"
+            android:text="T"
+            app:backgroundTint="@null"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnA"
+            app:layout_constraintEnd_toStartOf="@+id/btnC"
+            app:layout_constraintStart_toEndOf="@+id/btnA" />
+
+        <Button
+            android:id="@+id/btnA"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/button"
+            android:text="A"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toStartOf="@+id/btnT"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnC"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/button"
+            android:text="C"
+            app:backgroundTint="@null"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnT"
+            app:layout_constraintEnd_toStartOf="@+id/btnG"
+            app:layout_constraintStart_toEndOf="@+id/btnT" />
+
+        <Button
+            android:id="@+id/btnG"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/button"
+            android:text="G"
+            app:backgroundTint="@null"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnC" />
+
+        <Button
+            android:id="@+id/btnRemover"
+            android:layout_width="350dp"
+            android:layout_height="43dp"
+            android:background="@drawable/button"
+            android:text="REMOVER"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnA" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>

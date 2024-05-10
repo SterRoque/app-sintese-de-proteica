@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp">
+
+        <Button
+            android:id="@+id/bt_voltar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="253dp"
+            android:layout_marginRight="253dp"
+            android:layout_marginBottom="50dp"
+            android:text="voltar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textTrad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Com o final da transcrição, o RNAm se desloca do núcleo até o citoplasma até encontar um ou vários ribossomos. O ribossomo se conecta a fita de RNAm e inicia uma busca pelo codon(uma trinca de bases nitrogenadas) de iniciação (AUG que codifica o aminoácido metionina). Após encontrar o codon de inicialização e iniciar a tradução, o ribossomo avança pela fita conectando os codons aos anticodons (uma trinca de bases nitrogenadas que se conecta ao codon) dos RNA's transportadores presentes no citoplasma,  ligando sues aminoácidos por ligação peptídica. Assim esse processo continua até que o ribossomo encontre um codon de terminação ( UAA; UAG; UGA) que interrompe a tradução.  Observação: mais de um ribossomo pode traduzir a mesma fita de RNAm ao mesmo tempo."
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTradTitulo" />
+
+        <TextView
+            android:id="@+id/textTradTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tradução"
+            android:textColor="@color/vermelho"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="380dp"
+            android:layout_height="197dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTrad"
+            app:srcCompat="@drawable/proc_trad" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ilustração do processo da tradução"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

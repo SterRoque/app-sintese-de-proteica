@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ConteudoDuplicacao">
+
+    <Button
+        android:id="@+id/bt_prot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proteina"
+        app:backgroundTint="#FF6600" />
+
+    <Button
+        android:id="@+id/bt_acid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Acido Nucleico" />
+
+    <Button
+        android:id="@+id/bt_dup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Duplicação" />
+
+    <Button
+        android:id="@+id/bt_trasc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transcrição" />
+
+    <Button
+        android:id="@+id/bt_trad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tradução" />
+
+    <Button
+        android:id="@+id/bt_ex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exercicios" />
+</LinearLayout>

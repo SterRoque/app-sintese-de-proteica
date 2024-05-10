@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp">
+
+    <Button
+        android:id="@+id/bt_voltar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:text="VOLTAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textProt"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textProt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="As proteínas são um importante constituinte celular. Além de ser fundamentais no metabolismo celular e são compostos orgânicos essenciais para a vida, formados basicamente por átomos de carbono (C), Oxigênio (O), hidrogênio (H), nitrogênio (N) e podem também apresentar enxofre (S). As proteínas estão presentes na estrutura das características dos seres vivos. E participa de quase todas as reações químicas vitais. Há uma variedade de tipos de proteínas que realizam diferentes funções. As proteínas são sintetizadas pelas próprias células por meio de processos que envolvem informações contidas no DNA, diferentes tipos de RNA, aminoácidos e várias outras moléculas presentes na célula. "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textProtTitulo" />
+
+    <TextView
+        android:id="@+id/textProtTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Proteína"
+        android:textColor="@color/vermelho"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

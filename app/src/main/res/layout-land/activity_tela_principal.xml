@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#00FFEDEB"
+    tools:context=".activity.TelaPrincipal"
+    tools:layout_editor_absoluteX="-13dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <TextView
+        android:id="@+id/fita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="TextView"
+        android:textColor="@color/fita"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTraducao" />
+
+    <Button
+        android:id="@+id/buttonTraducao"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:background="@drawable/button"
+        app:backgroundTint="@null"
+        android:onClick="buttonTraducao"
+        android:text="Tradução"
+        android:textStyle="bold"
+        app:elevation="80dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTranscricao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonTranscricao" />
+
+    <TextView
+        android:id="@+id/limpa2"
+        android:layout_width="56dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="224dp"
+        android:layout_marginRight="224dp"
+        android:minHeight="48dp"
+        android:onClick="limpar"
+        android:padding="3dp"
+        android:text="Limpar "
+        android:textColor="@color/design_default_color_error"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <TextView
+        android:id="@+id/limpa"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:onClick="gerarFita"
+        android:padding="3dp"
+        android:text="Gerar fita"
+        android:textColor="@color/vermelho"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/limpa2"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <Button
+        android:id="@+id/buttonDup"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/button"
+        app:backgroundTint="@null"
+        android:onClick="buttonDuplicacao"
+        android:overScrollMode="always"
+        android:shadowColor="@color/teal_200"
+        android:shadowRadius="@dimen/material_emphasis_disabled"
+        android:text="Duplicão"
+        android:textStyle="bold"
+        app:elevation="80dp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTranscricao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <Button
+        android:id="@+id/buttonTranscricao"
+        android:layout_width="161dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/button"
+        app:backgroundTint="@null"
+        android:elevation="30dp"
+        android:focusable="true"
+        android:onClick="buttonTranscricao"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="TRANSCRIÇÃO"
+        android:textStyle="bold"
+        app:elevation="80dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonDup"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTraducao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonDup" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="177dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/animalogo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite a fita de DNA" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

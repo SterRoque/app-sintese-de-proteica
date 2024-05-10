@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp">
+
+    <Button
+        android:id="@+id/bt_voltar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="273dp"
+        android:layout_marginRight="273dp"
+        android:layout_marginBottom="36dp"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAcido"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textAcido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Ácidos nucleicos São polímeros formados por nucleotídeos e por sua vez formados por um fosfato, uma pentose (Ribose ou Desoxirribose) e uma base nitrogenada, sendo elas Adenina (A), Timina (T) ou Uracila (U) Citosina (C) e Guanina (G). Os nucleotídeos se conectam por uma ligação fosfodiester. Os ácidos nucleicos são: \n\nDNA (Ácido Desoxirribonucleico) é uma fita dupla hélice responsável por guardar as informações genéticas dos seres vivos. Formado por nucleotídeos com pentose Desoxirribonucleico e bases nitrogenadas Adenina (A), Timina (T), Citosina (C) e Guanina (G). Suas fitas estão ligadas por ligações de hidrogênio, que liga combinações de bases nitrogenadas, adenina se liga a timina e citosina se liga a guanina.   \n\nRNA (Ácido Ribonucleico) é uma fita única formada por nucleotídeos com pentose Ribose e bases nitrogenadas Adenina (A), Uracila (U), Citosina (C) e Guanina (G). O RNA tem algumas funções na síntese de proteínas como o RNAm (RNA mensageiro) que tem função de levar o código genético ao citoplasma para a ser traduzido em proteínas; o RNAt (RNA transportador) que tem função de transportar os aminoácidos para a tradução; RNAr (RNA ribossômico) que combinado com proteínas atua na tradução. "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAcidoTitulo" />
+
+    <TextView
+        android:id="@+id/textAcidoTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ácidos nucleicos"
+        android:textColor="@color/vermelho"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

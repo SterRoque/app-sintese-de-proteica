@@ -1,0 +1,28 @@
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android">
+    <svg width="169px" height="71px" viewBox="0 0 169 71" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_1">
+                <stop offset="0.12345679" stop-color="#7B00C2" />
+                <stop offset="1" stop-color="#FF00AE" />
+            </linearGradient>
+            <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_2">
+                <stop offset="0" stop-color="#F80505" />
+                <stop offset="1" stop-color="#800200" />
+            </linearGradient>
+            <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_3">
+                <stop offset="0" stop-color="#4093EB" />
+                <stop offset="1" stop-color="#0412AF" />
+            </linearGradient>
+        </defs>
+        <g id="base">
+            <g id="Group-4">
+                <path d="M0 15.9295C0 7.13187 7.65386 0 17.0954 0C26.5369 0 34.1908 7.13187 34.1908 15.9295C34.1908 24.7271 26.5369 31.859 17.0954 31.859C7.65386 31.859 0 24.7271 0 15.9295Z" id="Ellipse" fill="url(#gradient_1)" fill-rule="evenodd" stroke="none" />
+                <path d="M20.5145 0L40.0248 11.3215L32.5726 29.64L8.45641 29.6401L1.00402 11.3216L20.5145 0Z" transform="translate(58.612717 31.858974)" id="Polygon" fill="url(#gradient_2)" fill-rule="evenodd" stroke="none" />
+                <path d="M0 0L30.2832 0L30.2832 26.3974L0 26.3974L0 0Z" transform="translate(134.80925 35.5)" id="Rectangle-2" fill="url(#gradient_3)" fill-rule="evenodd" stroke="none" />
+                <path d="M0 0L21.0029 12.7436" transform="translate(34.19075 27.76282)" id="Line" fill="none" fill-rule="evenodd" stroke="#808080" stroke-width="1" stroke-linecap="square" />
+                <path d="M0 0.455128L28.8179 0" transform="translate(99.64162 50.51923)" id="Line-2" fill="none" fill-rule="evenodd" stroke="#808080" stroke-width="1" stroke-linecap="square" />
+            </g>
+        </g>
+    </svg>
+</vector>

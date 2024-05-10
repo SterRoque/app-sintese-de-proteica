@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>TelaPrincipal.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #eeffff;}
+.s1 { color: #c792ea; font-style: italic;}
+.s2 { color: #89ddff;}
+.s3 { color: #c3e88d;}
+.s4 { color: #f78c6c;}
+</style>
+</head>
+<body bgcolor="#212121">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TelaPrincipal.java</font>
+</center></td></tr></table>
+<pre>
+    <span class="s1">public void </span><span class="s0">gerarFita</span><span class="s2">(</span><span class="s0">View view</span><span class="s2">){</span>
+        <span class="s1">char</span><span class="s2">[] </span><span class="s0">dnaFita </span><span class="s2">= {</span><span class="s3">'A'</span><span class="s2">, </span><span class="s3">'T'</span><span class="s2">, </span><span class="s3">'C'</span><span class="s2">, </span><span class="s3">'G'</span><span class="s2">};</span>
+        <span class="s1">char</span><span class="s2">[] </span><span class="s0">fitaGerada </span><span class="s2">= </span><span class="s1">new char</span><span class="s2">[</span><span class="s4">23</span><span class="s2">];</span>
+
+        <span class="s0">String</span><span class="s2">[] </span><span class="s0">codonFinal </span><span class="s2">= {</span><span class="s3">&quot;ATT&quot;</span><span class="s2">, </span><span class="s3">&quot;ATC&quot;</span><span class="s2">, </span><span class="s3">&quot;ACT&quot;</span><span class="s2">};</span>
+
+        <span class="s1">for </span><span class="s2">(</span><span class="s1">int </span><span class="s0">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s0">i </span><span class="s2">&lt; </span><span class="s0">fitaGerada</span><span class="s2">.</span><span class="s0">length</span><span class="s2">; </span><span class="s0">i</span><span class="s2">++){</span>
+            <span class="s1">int </span><span class="s0">indice </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Random</span><span class="s2">().</span><span class="s0">nextInt</span><span class="s2">(</span><span class="s4">4</span><span class="s2">);</span>
+            <span class="s1">int </span><span class="s0">indice2 </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Random</span><span class="s2">().</span><span class="s0">nextInt</span><span class="s2">(</span><span class="s4">5</span><span class="s2">);</span>
+            <span class="s0">fitaGerada</span><span class="s2">[</span><span class="s0">indice2</span><span class="s2">] = </span><span class="s3">'T'</span><span class="s2">;</span>
+            <span class="s0">fitaGerada</span><span class="s2">[</span><span class="s0">indice2 </span><span class="s2">+ </span><span class="s4">1</span><span class="s2">] = </span><span class="s3">'A'</span><span class="s2">;</span>
+            <span class="s0">fitaGerada</span><span class="s2">[</span><span class="s0">indice2 </span><span class="s2">+ </span><span class="s4">2</span><span class="s2">] = </span><span class="s3">'C'</span><span class="s2">;</span>
+
+            <span class="s0">fitaGerada</span><span class="s2">[</span><span class="s0">i</span><span class="s2">] = </span><span class="s0">dnaFita</span><span class="s2">[</span><span class="s0">indice</span><span class="s2">];</span>
+        <span class="s2">}</span>
+        <span class="s0">fita </span><span class="s2">= </span><span class="s0">String</span><span class="s2">.</span><span class="s0">valueOf</span><span class="s2">(</span><span class="s0">fitaGerada</span><span class="s2">);</span>
+        <span class="s0">dna</span><span class="s2">.</span><span class="s0">setText</span><span class="s2">(</span><span class="s0">fita</span><span class="s2">);</span>
+    <span class="s2">}</span></pre>
+</body>
+</html>
